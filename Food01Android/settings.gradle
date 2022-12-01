@@ -1,0 +1,2 @@
+rootProject.name = "Food01Android"
+include ':app'

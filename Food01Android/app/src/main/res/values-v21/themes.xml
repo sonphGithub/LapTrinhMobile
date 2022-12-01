@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FullScreenDialog">
+        <item name="android:windowIsTranslucent">false
+        </item>
+        <item name="android:windowBackground">
+            @color/black40
+        </item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@color/black40</item>
+    </style>
+
+    <style name="BaseAppTheme" parent="android:Theme.Material">
+        <!-- enable window content transitions -->
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+    </style>
+</resources>

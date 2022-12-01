@@ -1,0 +1,120 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'org.jetbrains.kotlin.android'
+    id 'realm-android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        applicationId "com.example.food01android"
+        minSdkVersion 19
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-annotations'
+    }
+}
+
+
+realm {
+    syncEnabled = true
+}
+
+dependencies {
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+//facebook
+//    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
+
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.test:core-ktx:1.4.0'
+//    testImplementation 'junit:junit:'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+
+    //cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //taglist
+    implementation 'co.lujun:androidtagview:1.1.7'
+
+    //page_control
+    implementation 'com.tbuonomo:dotsindicator:4.2'
+
+    //looping viewpager
+    implementation 'com.asksira.android:loopingviewpager:1.4.1'
+
+    //navigation fragment
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+
+    //rating bar
+    implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+
+    //swipe to delete
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+
+    //view model
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
+
+    //bottom sheet
+    implementation 'com.github.andrefrsousa:SuperBottomSheet:2.0.0'
+
+    //folding cell
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
+
+    //ribbon
+    implementation "com.github.skydoves:androidribbon:1.0.4"
+
+    //btn favorite anim
+    implementation 'pub.hanks:smallbang:1.2.2'
+
+
+
+
+
+
+}

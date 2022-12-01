@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.food01android.activity.HomeTab.Home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_explore"
+            app:destination="@id/navigation_explore"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_preview"
+            app:destination="@id/navigation_preview"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_search"
+            app:destination="@id/navigation_search"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_guide"
+        android:name="com.example.food01android.activity.GuideTab.fragment.GuideFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/guide_fragment">
+        <action
+            android:id="@+id/action_navigation_guide_to_navigation_detail_guide"
+            app:destination="@id/navigation_detail_guide"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_shoppinglist"
+        android:name="com.example.food01android.activity.ShoppingListTab.ShoppingListFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_shopping_list">
+        <action
+            android:id="@+id/action_navigation_shoppinglist_to_navigation_dialog_add_shoppinglist"
+            app:destination="@id/navigation_dialog_add_shoppinglist"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_navigation_shoppinglist_to_navigation_favorite"
+            app:destination="@id/navigation_favorite"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_explore"
+        android:name="com.example.food01android.activity.HomeTab.Explore.ExploreFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_explore">
+        <argument
+            android:name="category_id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_navigation_explore_to_navigation_preview"
+            app:destination="@id/navigation_preview"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_preview"
+        android:name="com.example.food01android.activity.HomeTab.Preview.PreviewRecipesFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/activity_preview">
+        <argument
+            android:name="recipe_id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_navigation_preview_to_navigation_detail_recipes"
+            app:destination="@id/navigation_detail_recipes"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.example.food01android.activity.FavoriteTab.FavoriteFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/favorite_fragment">
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_preview"
+            app:destination="@id/navigation_preview"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_search"
+            app:destination="@id/navigation_search"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.food01android.activity.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/setting_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_detail_recipes"
+        android:name="com.example.food01android.activity.HomeTab.Detail.DetailRecipesFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/activity_detail">
+
+        <argument
+            android:name="dataRecipesDetail"
+            app:argType="com.example.food01android.model.Home.DataRecipeDetail" />
+
+        <action
+            android:id="@+id/action_navigation_detail_recipes_to_navigation_preview"
+            app:destination="@id/navigation_preview"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_navigation_detail_recipes_to_navigation_prepation"
+            app:destination="@id/navigation_preparation"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_navigation_detail_recipes_to_navigation_review"
+            app:destination="@id/navigation_review"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_preparation"
+        android:name="com.example.food01android.activity.HomeTab.Detail.PreparationFragment"
+        android:label="abc"
+        tools:layout="@layout/fragment_preparation">
+        <argument
+            android:name="methods"
+            app:argType="com.example.food01android.model.Home.Methods[]" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail_guide"
+        android:name="com.example.food01android.activity.GuideTab.fragment.DetailGuideFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/activity_categories_guide">
+
+        <action
+            android:id="@+id/action_navigation_detail_guide_to_navigation_article"
+            app:destination="@id/navigation_article"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <argument
+            android:name="category_id"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_article"
+        android:name="com.example.food01android.activity.GuideTab.fragment.ArticleFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/article_fragment">
+
+        <argument
+            android:name="detailGuide"
+            app:argType="com.example.food01android.model.Guide.DetailGuideData" />
+
+        <argument
+            android:name="part"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.food01android.activity.Search.SearchFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_preview"
+            app:destination="@id/navigation_preview"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_review"
+        android:name="com.example.food01android.activity.HomeTab.Detail.ReviewFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_reviews">
+        <argument
+            android:name="dataRecipesDetail"
+            app:argType="com.example.food01android.model.Home.DataRecipeDetail" />
+        <argument
+            android:name="rating"
+            android:defaultValue="0.0"
+            app:argType="float"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dialog_add_shoppinglist"
+        android:name="com.example.food01android.activity.ShoppingListTab.DialogAddShoppingListFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/shopping_list_dialog_fragment" />
+
+
+</navigation>
